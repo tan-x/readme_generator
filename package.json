@@ -1,0 +1,25 @@
+{
+  "name": "readme_generator",
+  "version": "1.0.0",
+  "description": "Command-line application that dynamically generates a README.md from a user's input.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tan-x/readme_generator.git"
+  },
+  "keywords": [
+    "README"
+  ],
+  "author": "tan-x",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tan-x/readme_generator/issues"
+  },
+  "homepage": "https://github.com/tan-x/readme_generator#readme",
+  "dependencies": {
+    "inquirer": "^7.2.0"
+  }
+}
