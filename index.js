@@ -33,17 +33,31 @@ inquirer.prompt([
     {
         type: 'list',
         message: 'What license is used?',
-        choices: ['MIT', 'GPL', 'CC'],
+        choices: ['MIT', 'Apache License 2.0', 'GNU GPLv3', 'ISC'],
         name: 'license'
-    }
+    },
+    {
+        type: 'input',
+        message: 'Provide test example',
+        name: 'test'
+    },
+    {
+        type: 'checkbox',
+        message: 'Tech stack:',
+        choices: ['HTML/CSS', 'Javascript', 'jQuery', 'node.js', 'React', 'React Native', 'AngularJS', 'Express'],
+        name: 'techstack'
+    },    
 ]).then(response => {
     fs.readFile('template.md', 'utf8', (err, data) => {
         if (err) {
             throw err;
         }
         let result = data;
+        // sort tech stack array into a MD list
+        var stack = '';
+        response.techstack.forEach((obj) => stack += `- ${obj}\n`)
+        response.techstack = stack;
         for (const prop in response) {
-            console.log(prop);
             result = result.replace(prop, response[prop]);
         }
         

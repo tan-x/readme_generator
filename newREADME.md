@@ -1,36 +1,49 @@
-# pubIO
+# pubio
 
 [![GitHub contributors](https://img.shields.io/github/contributors/pubIO-2020/pubIO.svg?style=flat)]()
 
-By tan-x
+By tanx
 
 ## Description
 
-get lit
+nahh pleees
+
+### Tech
+
+- Javascript
+- jQuery
+- node.js
+- React Native
+- Express
+
 
 ## Table of Contents
 
 * [Install](#install)
 
-* [Usage](#Install EXPO and open)
+* [Usage](#figure it out)
 
-* [License](#CC)
+* [License](#MIT)
 
 ## Install
 
-`npm pubIO pubIO`
+`npm install pubIO`
 
 ## Usage
 
 usage
 
-## License
-
-license
-
 ## Contributions
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 ## Tests
 
+testttt 123
+
 ## Questions
+
+## License
+
+license
 

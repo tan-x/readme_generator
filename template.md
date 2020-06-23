@@ -8,6 +8,10 @@ By username
 
 description
 
+### Tech
+
+techstack
+
 ## Table of Contents
 
 * [Install](#install)
@@ -18,19 +22,23 @@ description
 
 ## Install
 
-`npm installNPM pubIO`
+`npm install installNPM`
 
 ## Usage
 
 usage
 
-## License
-
-license
-
 ## Contributions
+
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 ## Tests
 
+test
+
 ## Questions
+
+## License
+
+license
 
