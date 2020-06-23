@@ -1,8 +1,6 @@
 let inquirer = require('inquirer');
 let fs = require('fs');
-let basics = require('./basics.js')
-
-// let writer = fs.createWriteStream('test.md');
+let basics = require('./basics.js');
 
 inquirer.prompt([
     {
@@ -60,7 +58,6 @@ inquirer.prompt([
         for (const prop in response) {
             result = result.replace(prop, response[prop]);
         }
-        
         fs.writeFile('newREADME.md', result, (err) => {
             if (err) {
                 throw err;
@@ -69,22 +66,4 @@ inquirer.prompt([
         })
     }
     )
-    // let install = response.install + '`';
-    // writer.write(`# ${response.project}\n\r`);
-    // writer.write(basics.badges.contributors + '\n\r');
-    // writer.write(`By ${response.username}\n\r`);
-    // writer.write('## Description\n\r');
-    // writer.write(`${response.description}\n\r`);
-    // writer.write('## Table of Contents\n\r');
-    // writer.write('* [Install](#install)\n\r');
-    // writer.write('* [Usage](#usage)\n\r');
-    // writer.write('* [License](#license)\n\r');
-    // writer.write('## Install\n\r');
-    // writer.write('`npm install ' + install + '\n\r');
-    // writer.write('## Usage\n\r');
-    // writer.write(`${response.usage}\n\r`);
-    // writer.write('## License\n\r');
-    // writer.write('## Contributions\n\r');
-    // writer.write('## Tests\n\r');
-    // writer.write('## Questions\n\r');
 })
