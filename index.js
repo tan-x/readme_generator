@@ -1,58 +1,108 @@
-let inquirer = require('inquirer');
-let fs = require('fs');
-let basics = require('./basics.js')
-
-let writer = fs.createWriteStream('test.md');
+const inquirer = require('inquirer');
+const fs = require('fs');
+const axios = require('axios');
+const badges = require('./badges');
+const { get } = require('https');
 
 inquirer.prompt([
     {
         type: 'input',
         message: 'What is your github username?',
-        name: 'username'
+        name: 'USERNAME'
+    },
+    {
+        type: 'input',
+        message: 'What is your contact email address?',
+        name: 'EMAIL'
     },
     {
         type: 'input',
         message: 'What is your project name?',
-        name: 'project'
+        name: 'PROJECT'
     },
     {
         type: 'input',
         message: 'Give a description of your project.',
-        name: 'description'
+        name: 'DESCRIPTION'
     },
     {
         type: 'input',
-        message: 'List your npm package for install.',
-        name: 'install'
+        message: 'List your npm package for install:',
+        name: 'INSTALL'
     },
     {
         type: 'input',
-        message: 'Provide instructions and examples for use.',
-        name: 'usage'
+        message: 'Provide instructions and examples for use:',
+        name: 'USAGE'
     },
     {
         type: 'list',
         message: 'What license is used?',
-        choices: ['MIT', 'GPL', 'CC'],
-        name: 'license'
-    }
+        choices: ['MIT', 'Apache License 2.0', 'GNU GPLv3', 'ISC'],
+        name: 'LICENSE'
+    },
+    {
+        type: 'input',
+        message: 'Provide test command:',
+        name: 'TEST'
+    },
+    {
+        type: 'checkbox',
+        message: 'Tech stack:',
+        choices: ['HTML/CSS', 'Javascript', 'jQuery', 'node.js', 'React', 'React Native', 'AngularJS', 'Express'],
+        name: 'TECHSTACK'
+    },    
 ]).then(response => {
-    let install = response.install + '`';
-    writer.write(`# ${response.project}\n\r`);
-    writer.write(basics.badges.contributors + '\n\r');
-    writer.write(`By ${response.username}\n\r`);
-    writer.write('## Description\n\r');
-    writer.write(`${response.description}\n\r`);
-    writer.write('## Table of Contents\n\r');
-    writer.write('* [Install](#install)\n\r');
-    writer.write('* [Usage](#usage)\n\r');
-    writer.write('* [License](#license)\n\r');
-    writer.write('## Install\n\r');
-    writer.write('`npm install ' + install + '\n\r');
-    writer.write('## Usage\n\r');
-    writer.write(`${response.usage}\n\r`);
-    writer.write('## License\n\r');
-    writer.write('## Contributions\n\r');
-    writer.write('## Tests\n\r');
-    writer.write('## Questions\n\r');
+    // get user data from githubAPI from username input
+    axios.get(`https://api.github.com/users/${response.USERNAME}`)
+        .then(res => {
+            userData = {
+                USERURL: res.data.html_url,
+                USER_NAME: res.data.name,
+                AVATAR: res.data.avatar_url
+            }
+            // read template file and replace matching items
+            fs.readFile('template.md', 'utf8', (err, data) => {
+                if (err) {
+                    throw err;
+                }
+                let result = data;
+                // sort tech stack array into a MD list
+                var stack = '';
+                response.TECHSTACK.forEach((obj) => stack += `- ${obj}\n`)
+                response.TECHSTACK = stack;
+                for (const prop in response) {
+                    result = result.replace(prop, response[prop]);
+                }
+                // render license badge based on user selection
+                switch (response.LICENSE) {
+                    case 'MIT':
+                        result = result.replace("licenseURL", badges.license.MIT);
+                        break;
+                    case 'Apache License 2.0':
+                        result = result.replace("licenseURL", badges.license.Apache);
+                        break;
+                    case 'GNU GPLv3':
+                        result = result.replace("licenseURL", badges.license.GPL);
+                        break;
+                    case 'ISC':
+                        result = result.replace("licenseURL", badges.license.ISC);
+                        break;
+                    default:
+                        result = result.replace("licenseURL", badges.license.MIT);
+                }
+                // replace matching items from githubAPI user call, including duplicate matches
+                for (const prop in userData) {
+                    result = result.replace(new RegExp(`${prop}`, 'g'), userData[prop])
+                }
+                // write altered template with user input changes
+                fs.writeFile('newREADME.md', result, (err) => {
+                    if (err) {
+                        throw err;
+                    }
+                    console.log('success!')
+                })
+            }
+            )
+        })
 })

@@ -1,1 +1,4 @@
 test.md
+.vscode/*
+node_modules/*
+newREADME.md
