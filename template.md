@@ -24,7 +24,11 @@ techstack
 
 ## Install
 
-`npm install installNPM`
+To install necessary dependencies, run the following command:
+
+```
+npm install installNPM
+```
 
 ## Usage
 
@@ -38,7 +42,11 @@ usage
 
 ## Tests
 
-test
+To run tests, run the following command:
+
+```
+npm test
+```
 
 ## Questions
 
