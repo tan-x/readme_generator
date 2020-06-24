@@ -62,7 +62,7 @@ inquirer.prompt([
                 AVATAR: res.data.avatar_url
             }
             // read template file and replace matching items
-            fs.readFile('template.md', 'utf8', (err, data) => {
+            fs.readFile('templates/template.md', 'utf8', (err, data) => {
                 if (err) {
                     throw err;
                 }
