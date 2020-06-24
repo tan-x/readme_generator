@@ -2,41 +2,47 @@
 
 [![GitHub contributors](https://img.shields.io/github/contributors/pubIO-2020/pubIO.svg?style=flat)]()
 
-
-
-By username
+By USERNAME
 
 ## Description
 
-description
+DESCRIPTION
 
 ### Tech
 
-techstack
+TECHSTACK
 
 ## Table of Contents
 
-* [Install](#install)
+* [Installation](#installation)
 
 * [Usage](#usage)
 
 * [License](#license)
 
-## Install
+* [Contributing](#contributing)
+
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
 
 To install necessary dependencies, run the following command:
 
 ```
-npm install installNPM
+npm install INSTALL
 ```
 
 ## Usage
 
-usage
+USAGE
+
+## License
+
+This project is licensed under the LICENSE license.
 
 ## Contributions
-
-[//]: contributor-faces
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
@@ -45,11 +51,11 @@ usage
 To run tests, run the following command:
 
 ```
-npm test
+npm test TEST
 ```
 
 ## Questions
 
-## License
+<img class="avatar" alt="avatar" src="AVATAR" width="72" height="72">
 
-license
+If you have any questions about the repo, open an issue or contact [USERNAME](USERURL) directly at EMAIL.

@@ -1,50 +1,64 @@
-# pubio
+# project
 
 [![GitHub contributors](https://img.shields.io/github/contributors/pubIO-2020/pubIO.svg?style=flat)]()
 
-
-
-By tanx
+By tan-x
 
 ## Description
 
-na
+pubIO
 
 ### Tech
 
-- HTML/CSS
-- jQuery
-- node.js
+- React Native
+- AngularJS
+- Express
 
 
 ## Table of Contents
 
-* [Install](#install)
+* [Installation](#installation)
 
-* [Usage](#;akjl)
+* [Usage](#usage)
 
-* [License](#MIT)
+* [License](#license)
 
-## Install
+* [Contributing](#contributing)
 
-`npm install jdfs`
+* [Tests](#tests)
+
+* [Questions](#questions)
+
+## Installation
+
+To install necessary dependencies, run the following command:
+
+```
+npm install pubio
+```
 
 ## Usage
 
-usage
+git lit
+
+## License
+
+This project is licensed under the MIT license.
 
 ## Contributions
-
-[//]: contributor-faces
 
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](code_of_conduct.md)
 
 ## Tests
 
-dfjk
+To run tests, run the following command:
+
+```
+npm test pub
+```
 
 ## Questions
 
-## License
+<img class="avatar" alt="avatar" src="https://avatars0.githubusercontent.com/u/40008983?v=4" width="72" height="72">
 
-license
+If you have any questions about the repo, open an issue or contact [Tanner Griffin](https://github.com/tan-x) directly at tannermgriffin@gmail.com.
