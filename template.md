@@ -1,8 +1,6 @@
-# project
+# PROJECT
 
-[![GitHub contributors](https://img.shields.io/github/contributors/pubIO-2020/pubIO.svg?style=flat)]()
-
-By USERNAME
+By [USERNAME](USERURL)
 
 ## Description
 
@@ -34,11 +32,11 @@ To install necessary dependencies, run the following command:
 npm install INSTALL
 ```
 
-## Usage
-
 USAGE
 
 ## License
+
+licenseURL
 
 This project is licensed under the LICENSE license.
 
@@ -58,4 +56,4 @@ npm test TEST
 
 <img class="avatar" alt="avatar" src="AVATAR" width="72" height="72">
 
-If you have any questions about the repo, open an issue or contact [USERNAME](USERURL) directly at EMAIL.
+If you have any questions about the repo, open an issue or contact [USER_NAME](USERURL) directly at EMAIL.
