@@ -1,4 +1,4 @@
-# PROJECT
+module.exports = `# PROJECT
 
 By [USERNAME](USERURL)
 
@@ -28,9 +28,9 @@ TECHSTACK
 
 To install necessary dependencies, run the following command:
 
-```
+\`\`\`
 npm install INSTALL
-```
+\`\`\`
 
 ## Usage
 
@@ -52,9 +52,9 @@ Pull requests are welcomed, please review guidlines.
 
 To run tests, run the following command:
 
-```
+\`\`\`
 npm test TEST
-```
+\`\`\`
 
 TESTINFO
 
@@ -62,4 +62,4 @@ TESTINFO
 
 <img class="avatar" alt="avatar" src="AVATAR" width="72" height="72">
 
-If you have any questions about the repo, open an issue or contact [USER_NAME](USERURL) directly at EMAIL.
+If you have any questions about the repo, open an issue or contact [USER_NAME](USERURL) directly at EMAIL.`
