@@ -2,57 +2,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const axios = require('axios');
 const badges = require('./badges');
-const { get } = require('https');
+const inqData = require('./inquirerData');
 
-inquirer.prompt([
-    {
-        type: 'input',
-        message: 'What is your github username?',
-        name: 'USERNAME'
-    },
-    {
-        type: 'input',
-        message: 'What is your contact email address?',
-        name: 'EMAIL'
-    },
-    {
-        type: 'input',
-        message: 'What is your project name?',
-        name: 'PROJECT'
-    },
-    {
-        type: 'input',
-        message: 'Give a description of your project.',
-        name: 'DESCRIPTION'
-    },
-    {
-        type: 'input',
-        message: 'List your npm package for install:',
-        name: 'INSTALL'
-    },
-    {
-        type: 'input',
-        message: 'Provide instructions and examples for use:',
-        name: 'USAGE'
-    },
-    {
-        type: 'list',
-        message: 'What license is used?',
-        choices: ['MIT', 'Apache License 2.0', 'GNU GPLv3', 'ISC'],
-        name: 'LICENSE'
-    },
-    {
-        type: 'input',
-        message: 'Provide test command:',
-        name: 'TEST'
-    },
-    {
-        type: 'checkbox',
-        message: 'Tech stack:',
-        choices: ['HTML/CSS', 'Javascript', 'jQuery', 'node.js', 'React', 'React Native', 'AngularJS', 'Express'],
-        name: 'TECHSTACK'
-    },    
-]).then(response => {
+inquirer.prompt(inqData).then(response => {
     // get user data from githubAPI from username input
     axios.get(`https://api.github.com/users/${response.USERNAME}`)
         .then(res => {
@@ -96,7 +48,7 @@ inquirer.prompt([
                     result = result.replace(new RegExp(`${prop}`, 'g'), userData[prop])
                 }
                 // write altered template with user input changes
-                fs.writeFile('newREADME.md', result, (err) => {
+                fs.writeFile('generated/README.md', result, (err) => {
                     if (err) {
                         throw err;
                     }
