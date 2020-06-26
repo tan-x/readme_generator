@@ -1,3 +1,5 @@
+const inquirer = require('inquirer');
+
 module.exports = [
     {
         type: 'input',
@@ -48,7 +50,7 @@ module.exports = [
     {
         type: 'checkbox',
         message: 'Tech stack:',
-        choices: ['HTML/CSS', 'Javascript', 'jQuery', 'node.js', 'React', 'React Native', 'AngularJS', 'Express'],
+        choices: ['HTML/CSS', 'Javascript', 'jQuery', 'node.js', 'React', 'React Native', 'AngularJS', 'Express', new inquirer.Separator()],
         name: 'TECHSTACK'
     },    
 ]
